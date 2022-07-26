@@ -1,0 +1,44 @@
+<div class="wrapper">
+  <h1>List of Starships</h1>
+  <div class="star">
+    <div *ngFor="let stars of starship">
+      <div>
+        <table>
+          <tr>
+            <h1>Name:</h1>
+            <td>
+              <h2>{{ stars.name }}</h2>
+            </td>
+          </tr>
+          <tr>
+            <td><h1>starship_class:</h1></td>
+            <td>
+              <h2>{{ stars.starship_class }}</h2>
+            </td>
+          </tr>
+          <tr>
+            <td><h1>passengers:</h1></td>
+            <td>
+              <h2>{{ stars.passengers }}</h2>
+            </td>
+          </tr>
+          <tr>
+            <td><h1>length:</h1></td>
+            <td>
+              <h2>{{ stars.length }}</h2>
+            </td>
+          </tr>
+          <tr>
+            <td><h1>created:</h1></td>
+            <td>
+              <h2>{{ stars.created }}</h2>
+            </td>
+          </tr>
+        </table>
+        <button mat-button (click)="openDialog()">Open dialog</button>
+      </div>
+
+      <p></p>
+    </div>
+  </div>
+</div>

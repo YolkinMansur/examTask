@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div *ngFor="let film of films">
+    <div class="film">
+      <h1>{{ film.title }}</h1>
+      <p>{{ film.opening_crawl }}</p>
+      <b>Producer:{{ film.producer }}</b
+      ><br />
+      <b>Release_date:{{ film.release_date }}</b
+      ><br />
+      <button routerLink="/information">About film</button>
+    </div>
+  </div>
+</div>

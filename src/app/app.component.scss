@@ -1,0 +1,17 @@
+.navbar {
+  height: 50px;
+  background-color: blue;
+}
+
+ul {
+  display: flex;
+  text-decoration: none;
+  li {
+    margin-right: 35px;
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+}

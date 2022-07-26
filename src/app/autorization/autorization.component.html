@@ -1,0 +1,62 @@
+<form class="example-form">
+  <table>
+    <tr>
+      <td>
+        <mat-form-field>
+          <mat-label>Login</mat-label>
+          <input
+            type="text"
+            matInput
+            [formControl]="loginFormControl"
+            placeholder="Login"
+            max="20"
+            min="5"
+            required
+          />
+        </mat-form-field>
+        <mat-error
+          *ngIf="
+            loginFormControl.hasError('login') &&
+            loginFormControl.hasError('required')
+          "
+        >
+          Please enter a valid login
+        </mat-error>
+        <mat-error *ngIf="loginFormControl.hasError('required')">
+          Неправильные данные <strong>login</strong>
+        </mat-error>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            [formControl]="emailFormControl"
+            placeholder="swapi.com"
+            max="20"
+            min="5"
+            required
+          />
+          <mat-error
+            *ngIf="
+              emailFormControl.hasError('email') &&
+              !emailFormControl.hasError('required')
+            "
+          >
+            Please enter a valid email address
+          </mat-error>
+          -->
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Неправильные данные <strong>email</strong>
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <section>
+    <div class="example-button-row">
+      <button type="submit" (click)="storeName()">Войти</button>
+    </div>
+  </section>
+</form>

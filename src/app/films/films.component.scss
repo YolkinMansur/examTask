@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1500px;
+  margin: 0 auto;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.film {
+  display: block;
+  width: 434px;
+  border: 1px solid grey;
+  border-radius: 15px;
+  padding-left: 10px;
+}
+
+button {
+  height: 35px;
+  margin: 20px 0;
+  background-color: blue;
+  color: #fff;
+}
