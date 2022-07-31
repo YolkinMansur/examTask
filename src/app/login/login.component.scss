@@ -1,4 +1,47 @@
 .container {
-  width: 1000px;
+  width: 800px;
   margin: 0 auto;
+  margin-top: 10px;
+}
+
+form {
+  width: 700px;
+  margin-left: 50px;
+  h1 {
+    width: fit-content;
+    margin: 10px auto;
+  }
+}
+.form-control {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  label {
+    margin-right: 10px;
+    font-size: 1.5rem;
+  }
+}
+
+.card {
+  width: 650px;
+  margin-left: 10px;
+  border: 1px solid grey;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  width: 600px;
+
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  &.ng-valid.ng-touched {
+    border: 1px solid green;
+  }
+}
+
+small {
+  color: red;
 }

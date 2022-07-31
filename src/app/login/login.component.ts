@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -8,33 +8,27 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
-  form = {
-    username: '',
-    password: '',
-  };
-  errorMessage: string | any;
+export class LoginComponent implements OnInit {
+  form: string | any = FormGroup;
 
-  @ViewChild('loginForm', { static: false }) loginForm: NgForm | any;
-
-  constructor(private authService: AuthService, private router: Router) {}
-
-  login(): void {
-    if (this.loginForm.valid) {
-      this.authService.login(this.form).subscribe(
-        () => {
-          this.router.navigateByUrl('/');
-        },
-        (err) => {
-          this.errorMessage = err && err.error;
-        }
-      );
-    } else {
-      this.errorMessage = 'Please enter valid data';
-    }
+  ngOnInit(): void {
+    this.form = new FormGroup({
+      email: new FormControl('', [Validators.email, Validators.required]),
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
+    });
   }
 
-  resetError(): void {
-    this.errorMessage = null;
+  submit() {
+    if (this.form.valid) {
+      console.log('Form', this.form);
+      const formData = { ...this.form.value };
+
+      console.log('form data', formData);
+
+      this.form.reset();
+    }
   }
 }
